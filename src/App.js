@@ -39,6 +39,10 @@ function App() {
   return (
     <div className="App">
       <h1>Animal List</h1>
+      <div>
+        <p>Filters:</p>
+        <button>Cats</button> <button>Dogs</button> <button>All</button>
+      </div>
       <table id="list">
         <thead>
           <tr id="sorting">

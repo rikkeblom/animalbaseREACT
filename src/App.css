@@ -13,6 +13,19 @@
   cursor: pointer;
 }
 
+.App div {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid white;
+}
+
+.App button {
+  height: min-content;
+}
+
 #sorting th {
   filter: grayscale(100%);
 }
