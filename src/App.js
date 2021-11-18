@@ -1,5 +1,5 @@
 import "./App.css";
-// import { useState } from "react";
+import { useState } from "react";
 
 function App() {
   const animalList = [
@@ -34,14 +34,30 @@ function App() {
       key: 6,
     },
   ];
-  let animalListCopy = [...animalList];
+  const [animalListCopy, setanimalListCopy] = useState(animalList);
+
+  function filterCats() {
+    console.log("filter for cats");
+    filterForAll();
+    setanimalListCopy(() => [...animalList].filter((animal) => animal.fullname.includes("cat")));
+  }
+
+  function filterDogs() {
+    console.log("filter for dogs");
+    filterForAll();
+    setanimalListCopy(() => [...animalList].filter((animal) => animal.fullname.includes("dog")));
+  }
+
+  function filterForAll() {
+    setanimalListCopy(() => [...animalList]);
+  }
 
   return (
     <div className="App">
       <h1>Animal List</h1>
       <div>
         <p>Filters:</p>
-        <button>Cats</button> <button>Dogs</button> <button>All</button>
+        <button onClick={filterCats}>Cats</button> <button onClick={filterDogs}>Dogs</button> <button onClick={filterForAll}>All</button>
       </div>
       <table id="list">
         <thead>
